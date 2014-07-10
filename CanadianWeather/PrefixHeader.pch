@@ -1,0 +1,26 @@
+//
+//  PrefixHeader.pch
+//  CanadianWeather
+//
+//  Created by Ronny Fenrich on 2014-06-30.
+//  Copyright (c) 2014 Ronny Fenrich. All rights reserved.
+//
+
+#ifndef CanadianWeather_PrefixHeader_pch
+#define CanadianWeather_PrefixHeader_pch
+
+#ifdef __OBJC__
+
+#import "WeatherDataPoint.h"
+#import "WeatherDataCurrentCondition.h"
+#import "WeatherDataForecastCondition.h"
+
+#import "WeatherData.h"
+
+#endif
+
+
+// URLs
+
+
+#endif
