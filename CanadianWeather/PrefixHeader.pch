@@ -13,14 +13,15 @@
 
 #import "WeatherDataPoint.h"
 #import "WeatherDataCurrentCondition.h"
+#import "WeatherDataForecastConditions.h"
 #import "WeatherDataForecastCondition.h"
-
 #import "WeatherData.h"
 
 #endif
 
 
 // URLs
+
 
 
 #endif

@@ -10,4 +10,10 @@
 
 @implementation WeatherDataPoint
 
+-(NSString *)description {
+    // for debug output
+    NSString *result = [NSString stringWithFormat:@"%@%@", self.value, self.units];
+    return result;
+}
+
 @end

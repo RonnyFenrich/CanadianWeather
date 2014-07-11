@@ -12,6 +12,7 @@
 @interface WeatherDataCurrentCondition : NSObject
 
 @property (strong, nonatomic) NSString *stationName;
+@property (strong, nonatomic) NSString *observationTime;
 
 @property (strong, nonatomic) NSString *condition;
 @property (strong, nonatomic) NSString *iconCode;

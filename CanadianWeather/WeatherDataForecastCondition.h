@@ -10,4 +10,19 @@
 
 @interface WeatherDataForecastCondition : NSObject
 
+
+@property (strong, nonatomic) NSString *periodName;
+@property (strong, nonatomic) NSString *periodDescription;
+
+@property (strong, nonatomic) NSString *summary;
+
+@property (strong, nonatomic) NSString *iconCode;
+@property (strong, nonatomic) NSString *iconFormat;
+
+@property (strong, nonatomic) WeatherDataPoint *pop;
+@property (strong, nonatomic) NSString *popTextSummary;
+
+@property (strong, nonatomic) WeatherDataPoint *temperatureHigh;
+@property (strong, nonatomic) WeatherDataPoint *temperatureLow;
+
 @end

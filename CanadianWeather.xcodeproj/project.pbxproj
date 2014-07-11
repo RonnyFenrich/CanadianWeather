@@ -19,6 +19,7 @@
 		E3048BD21962096700D764C6 /* WeatherDataCurrentCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = E3048BD11962096700D764C6 /* WeatherDataCurrentCondition.m */; };
 		E3048BD51962097900D764C6 /* WeatherDataForecastCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = E3048BD41962097900D764C6 /* WeatherDataForecastCondition.m */; };
 		E3048BD819620C6200D764C6 /* WeatherDataPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = E3048BD719620C6200D764C6 /* WeatherDataPoint.m */; };
+		E3AACC7E196F301E00E0A485 /* WeatherDataForecastConditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E3AACC7D196F301E00E0A485 /* WeatherDataForecastConditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		E3048BD41962097900D764C6 /* WeatherDataForecastCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDataForecastCondition.m; sourceTree = "<group>"; };
 		E3048BD619620C6200D764C6 /* WeatherDataPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherDataPoint.h; sourceTree = "<group>"; };
 		E3048BD719620C6200D764C6 /* WeatherDataPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDataPoint.m; sourceTree = "<group>"; };
+		E3AACC7C196F301E00E0A485 /* WeatherDataForecastConditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherDataForecastConditions.h; sourceTree = "<group>"; };
+		E3AACC7D196F301E00E0A485 /* WeatherDataForecastConditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDataForecastConditions.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,14 +152,16 @@
 		E3048BA41961D20200D764C6 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				E3048BA01961D1E800D764C6 /* WeatherDataController.h */,
-				E3048BA11961D1E800D764C6 /* WeatherDataController.m */,
 				E3048BCD1961EF5000D764C6 /* WeatherData.h */,
 				E3048BCE1961EF5000D764C6 /* WeatherData.m */,
+				E3048BA01961D1E800D764C6 /* WeatherDataController.h */,
+				E3048BA11961D1E800D764C6 /* WeatherDataController.m */,
 				E3048BD01962096700D764C6 /* WeatherDataCurrentCondition.h */,
 				E3048BD11962096700D764C6 /* WeatherDataCurrentCondition.m */,
 				E3048BD31962097900D764C6 /* WeatherDataForecastCondition.h */,
 				E3048BD41962097900D764C6 /* WeatherDataForecastCondition.m */,
+				E3AACC7C196F301E00E0A485 /* WeatherDataForecastConditions.h */,
+				E3AACC7D196F301E00E0A485 /* WeatherDataForecastConditions.m */,
 				E3048BD619620C6200D764C6 /* WeatherDataPoint.h */,
 				E3048BD719620C6200D764C6 /* WeatherDataPoint.m */,
 			);
@@ -283,6 +288,7 @@
 				E3048BCF1961EF5000D764C6 /* WeatherData.m in Sources */,
 				E3048BD51962097900D764C6 /* WeatherDataForecastCondition.m in Sources */,
 				E3048BD819620C6200D764C6 /* WeatherDataPoint.m in Sources */,
+				E3AACC7E196F301E00E0A485 /* WeatherDataForecastConditions.m in Sources */,
 				E3048BA21961D1E800D764C6 /* WeatherDataController.m in Sources */,
 				E3048B861961CC6B00D764C6 /* ViewController.m in Sources */,
 				E3048BC81961EE4500D764C6 /* XMLDictionary.m in Sources */,

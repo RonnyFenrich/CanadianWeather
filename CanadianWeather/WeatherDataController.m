@@ -70,40 +70,100 @@
 
     WeatherData *wd = [[WeatherData alloc] init];
     wd.updateTime = [NSDate date];
-
     wd.locationName = [data valueForKeyPath:@"location.name.__text"];
 
-    NSArray *updateTimes = [data valueForKeyPath:@"currentConditions.dateTime"];
-    wd.observationTime = [self getDateFromArray:updateTimes];
+    // current conditions
+    wd.current = [[WeatherDataCurrentCondition alloc] init];
+    wd.current.stationName = [data valueForKeyPath:@"currentConditions.station.__text"];
+    NSArray *observationTimes = [data valueForKeyPath:@"currentConditions.dateTime"];
+    wd.current.observationTime = [self getLocalDateFromArray:observationTimes];
 
-    WeatherDataCurrentCondition *cc = [[WeatherDataCurrentCondition alloc] init];
-    cc.stationName = [data valueForKeyPath:@"currentConditions.station.__text"];
+    wd.current.condition = [data valueForKeyPath:@"currentConditions.condition"];
+    wd.current.iconCode = [data valueForKeyPath:@"currentConditions.iconCode.__text"];
+    wd.current.iconFormat = [data valueForKeyPath:@"currentConditions.iconCode._format"];
 
     NSDictionary *temperatureData = [data valueForKeyPath:@"currentConditions.temperature"];
-    cc.temperature = [self getDataPointFromDictionary:temperatureData];
-
+    wd.current.temperature = [self getDataPointFromDictionary:temperatureData];
     NSDictionary *dewpointData = [data valueForKeyPath:@"currentConditions.dewpoint"];
-    cc.dewpoint = [self getDataPointFromDictionary:dewpointData];
-
+    wd.current.dewpoint = [self getDataPointFromDictionary:dewpointData];
     NSDictionary *pressureData = [data valueForKeyPath:@"currentConditions.pressure"];
-    cc.pressure = [self getDataPointFromDictionary:pressureData];
-
+    wd.current.pressure = [self getDataPointFromDictionary:pressureData];
     NSDictionary *visibilityData = [data valueForKeyPath:@"currentConditions.visibility"];
-    cc.visibility = [self getDataPointFromDictionary:visibilityData];
-
+    wd.current.visibility = [self getDataPointFromDictionary:visibilityData];
     NSDictionary *relativeHumidityData = [data valueForKeyPath:@"currentConditions.relativeHumidity"];
-    cc.relativeHumidity = [self getDataPointFromDictionary:relativeHumidityData];
-
+    wd.current.relativeHumidity = [self getDataPointFromDictionary:relativeHumidityData];
     NSDictionary *windSpeedData = [data valueForKeyPath:@"currentConditions.wind.speed"];
-    cc.windSpeed = [self getDataPointFromDictionary:windSpeedData];
+    wd.current.windSpeed = [self getDataPointFromDictionary:windSpeedData];
 
+    // forcast
+    wd.forecast = [[WeatherDataForecastConditions alloc] init];
+
+    NSArray *forecastIssueTimes = [data valueForKeyPath:@"forecastGroup.dateTime"];
+    wd.forecast.forecastIssueTime = [self getLocalDateFromArray:forecastIssueTimes];
+
+    NSArray *allForecasts = [data valueForKeyPath:@"forecastGroup.forecast"];
+
+    if (allForecasts && [allForecasts isKindOfClass:[NSArray class]]) {
+
+        NSMutableArray *forecasts = [[NSMutableArray alloc] init];
+        for (NSDictionary *aForecast in allForecasts) {
+
+            WeatherDataForecastCondition *fc = [[WeatherDataForecastCondition alloc] init];
+            fc.periodName = [aForecast valueForKeyPath:@"period._textForecastName"];
+            fc.periodDescription = [aForecast valueForKeyPath:@"period.__text"];
+
+            fc.summary = [aForecast valueForKeyPath:@"textSummary"];
+
+            fc.iconCode = [aForecast valueForKeyPath:@"abbreviatedForecast.iconCode.__text"];
+            fc.iconFormat = [aForecast valueForKeyPath:@"abbreviatedForecast.iconCode._format"];
+
+            NSDictionary *popData = [data valueForKeyPath:@"abbreviatedForecast.pop"];
+            fc.pop = [self getDataPointFromDictionary:popData];
+            fc.popTextSummary = [aForecast valueForKeyPath:@"abbreviatedForecast.textSummary"];
+
+            // search for High and Low temparature information
+            NSObject *tempData = [aForecast valueForKeyPath:@"temperatures.temperature"];
+            if ([tempData isKindOfClass:[NSDictionary class]]) {
+                // just one value for this forecast period
+                WeatherDataPoint *dp = [[WeatherDataPoint alloc] init];
+                dp.value = [(NSDictionary *)tempData valueForKey:@"__text"];
+                dp.units = [(NSDictionary *)tempData valueForKey:@"_units"];
+                if ([[(NSDictionary *)tempData valueForKeyPath:@"_class"] isEqualToString:@"high"]) {
+                    fc.temperatureHigh = dp;
+                }
+                if ([[(NSDictionary *)tempData valueForKeyPath:@"_class"] isEqualToString:@"low"]) {
+                    fc.temperatureLow = dp;
+                }
+            }
+            else if ([tempData isKindOfClass:[NSArray class]]) {
+                // more than one temp
+                for (NSDictionary *td in (NSArray * )tempData) {
+                    WeatherDataPoint *dp = [[WeatherDataPoint alloc] init];
+                    dp.value = [td valueForKey:@"__text"];
+                    dp.units = [td valueForKey:@"_units"];
+
+                    if ([[td valueForKeyPath:@"_class"] isEqualToString:@"high"]) {
+                        fc.temperatureHigh = dp;
+                    }
+                    if ([[td valueForKeyPath:@"_class"] isEqualToString:@"low"]) {
+                        fc.temperatureLow = dp;
+                    }
+                }
+            }
+
+            [forecasts addObject:fc];
+        }
+        wd.forecast.forecasts = forecasts;
+    }
+
+    NSLog(@"%@", wd);
 
 }
 
 
 // --------------------------------------------------------------------------------------
 
-- (NSString *)getDateFromArray:(NSArray *)anArray {
+- (NSString *)getLocalDateFromArray:(NSArray *)anArray {
 
     for (NSDictionary *record in anArray)
     {
@@ -123,6 +183,10 @@
     WeatherDataPoint *dp = [[WeatherDataPoint alloc] init];
     dp.value = [data valueForKey:@"__text"];
     dp.units = [data valueForKey:@"_units"];
+
+    if (!dp.value) {
+        return nil;
+    }
     return dp;
 }
 

@@ -14,9 +14,7 @@
 
 @property (strong, nonatomic) NSString *locationName;
 
-@property (strong, nonatomic) NSString *observationTime;
-
 @property (strong, nonatomic) WeatherDataCurrentCondition *current;
-@property (strong, nonatomic) NSArray *forecasts;    // of WeatherDataForecastCondition
+@property (strong, nonatomic) WeatherDataForecastConditions *forecast;
 
 @end
