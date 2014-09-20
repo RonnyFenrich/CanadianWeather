@@ -12,6 +12,7 @@
 
 @interface ViewController ()
             
+@property (strong, nonatomic) IBOutlet UIButton *getWeatherButton;
 
 @end
 
@@ -27,9 +28,22 @@
 
 - (IBAction)getWeatherBtnTapped:(id)sender {
 
+    self.getWeatherButton.hidden = YES;
     // get latest weather data, cache and forward to display view controller
-    WeatherDataController *weatherDataController = [[WeatherDataController alloc] init];
-    [weatherDataController refreshLocalDataWithForce:YES];
+    WeatherDataController *weatherDataController = [WeatherDataController sharedInstance];
+    [weatherDataController refreshLocalDataWithForce:YES callback:^{
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+
+            self.getWeatherButton.hidden = NO;
+            if (weatherDataController.hasData) {
+                [self performSegueWithIdentifier:@"segueShowWeatherData" sender:nil];
+            }
+        });
+
+
+
+    }];
 
 }
 

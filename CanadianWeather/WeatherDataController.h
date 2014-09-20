@@ -10,7 +10,13 @@
 
 @interface WeatherDataController : NSObject
 
+// Singleton pattern
++ (instancetype)sharedInstance;
+
+@property (nonatomic) BOOL hasData;
+@property (strong, nonatomic) WeatherData *currentWeatherData;
+
 - (NSArray *)weatherDataLocations;                          // of WeatherLocation
-- (void)refreshLocalDataWithForce:(BOOL)forceRefresh;       // retrieve updated results if expired or forced
+- (void)refreshLocalDataWithForce:(BOOL)forceRefresh callback:(void(^)())callback;       // retrieve updated results if expired or forced
 
 @end

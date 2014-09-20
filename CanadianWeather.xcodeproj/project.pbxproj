@@ -20,6 +20,7 @@
 		E3048BD51962097900D764C6 /* WeatherDataForecastCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = E3048BD41962097900D764C6 /* WeatherDataForecastCondition.m */; };
 		E3048BD819620C6200D764C6 /* WeatherDataPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = E3048BD719620C6200D764C6 /* WeatherDataPoint.m */; };
 		E3AACC7E196F301E00E0A485 /* WeatherDataForecastConditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E3AACC7D196F301E00E0A485 /* WeatherDataForecastConditions.m */; };
+		E3B7CB2F19CD370F00F9F48B /* ShowSimpleWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7CB2E19CD370F00F9F48B /* ShowSimpleWeatherViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		E3048BD719620C6200D764C6 /* WeatherDataPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDataPoint.m; sourceTree = "<group>"; };
 		E3AACC7C196F301E00E0A485 /* WeatherDataForecastConditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherDataForecastConditions.h; sourceTree = "<group>"; };
 		E3AACC7D196F301E00E0A485 /* WeatherDataForecastConditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDataForecastConditions.m; sourceTree = "<group>"; };
+		E3B7CB2D19CD370F00F9F48B /* ShowSimpleWeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowSimpleWeatherViewController.h; sourceTree = "<group>"; };
+		E3B7CB2E19CD370F00F9F48B /* ShowSimpleWeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowSimpleWeatherViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +148,8 @@
 			children = (
 				E3048B841961CC6B00D764C6 /* ViewController.h */,
 				E3048B851961CC6B00D764C6 /* ViewController.m */,
+				E3B7CB2D19CD370F00F9F48B /* ShowSimpleWeatherViewController.h */,
+				E3B7CB2E19CD370F00F9F48B /* ShowSimpleWeatherViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -295,6 +300,7 @@
 				E3048B831961CC6B00D764C6 /* AppDelegate.m in Sources */,
 				E3048BD21962096700D764C6 /* WeatherDataCurrentCondition.m in Sources */,
 				E3048B801961CC6B00D764C6 /* main.m in Sources */,
+				E3B7CB2F19CD370F00F9F48B /* ShowSimpleWeatherViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

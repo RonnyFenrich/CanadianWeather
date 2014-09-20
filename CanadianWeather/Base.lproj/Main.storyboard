@@ -1,10 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="AmD-dR-3Xa">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="SGh-7W-ke1">
+            <objects>
+                <navigationController id="AmD-dR-3Xa" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="niD-T4-l6d">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="Ng8-ip-Kfm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LVd-gL-mW0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-387" y="46"/>
+        </scene>
+        <!--Canadian Weather-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
@@ -17,8 +34,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQd-ud-b70">
-                                <rect key="frame" x="85" y="175" width="151" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="85" y="269" width="151" height="30"/>
                                 <color key="backgroundColor" red="0.86666666670000003" green="0.87843137250000003" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="151" id="Mfu-ES-9Ag"/>
@@ -33,46 +49,55 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="mQd-ud-b70" secondAttribute="centerY" constant="94" id="G51-8K-uY2"/>
+                            <constraint firstAttribute="centerY" secondItem="mQd-ud-b70" secondAttribute="centerY" id="G51-8K-uY2"/>
                             <constraint firstAttribute="centerX" secondItem="mQd-ud-b70" secondAttribute="centerX" constant="-0.5" id="Yai-gh-r9g"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Canadian Weather" id="Ktf-kS-xF2"/>
                     <connections>
-                        <segue destination="M4J-lG-acu" kind="modal" identifier="segueShowWeatherData" id="qEJ-t5-QHV"/>
+                        <outlet property="getWeatherButton" destination="mQd-ud-b70" id="stc-Al-J2i"/>
+                        <segue destination="SOF-dK-ddx" kind="push" identifier="segueShowWeatherData" id="oUg-lb-V3d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="279" y="276"/>
+            <point key="canvasLocation" x="31" y="46"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="Qb9-2d-Tn1">
+        <!--Weather for Edmonton-->
+        <scene sceneID="njG-gA-ncu">
             <objects>
-                <tableViewController id="M4J-lG-acu" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="DhE-1x-mzc">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="SOF-dK-ddx" customClass="ShowSimpleWeatherViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4Jc-N2-1wn"/>
+                        <viewControllerLayoutGuide type="bottom" id="b0N-5N-dsv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UYf-Yu-WSG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Weather Weather Weather" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyy-Ug-fkn">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="0.90000000000000002" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="fKL-7u-nq0">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fKL-7u-nq0" id="vGH-j8-Tc6">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="M4J-lG-acu" id="ddy-ut-yei"/>
-                            <outlet property="delegate" destination="M4J-lG-acu" id="Pqc-mn-9yT"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="qtp-WU-mo2"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TVv-tK-b1K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstItem="nyy-Ug-fkn" firstAttribute="leading" secondItem="UYf-Yu-WSG" secondAttribute="leadingMargin" constant="-16" id="Jbk-Lg-Bw4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nyy-Ug-fkn" secondAttribute="trailing" constant="-16" id="mEN-Ce-VlB"/>
+                            <constraint firstItem="nyy-Ug-fkn" firstAttribute="top" secondItem="4Jc-N2-1wn" secondAttribute="bottom" id="mgq-vx-Ucf"/>
+                            <constraint firstItem="b0N-5N-dsv" firstAttribute="top" secondItem="nyy-Ug-fkn" secondAttribute="bottom" id="uJX-Gr-Dek"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Weather for Edmonton" id="kRv-Ms-ZSI"/>
+                    <connections>
+                        <outlet property="weatherInformation" destination="nyy-Ug-fkn" id="EgZ-P7-WZr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iLM-a8-bdb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="781" y="276"/>
+            <point key="canvasLocation" x="494" y="46"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -15,7 +15,6 @@
 
 @interface WeatherDataController()
 
-
 @end
 
 
@@ -23,21 +22,48 @@
 @implementation WeatherDataController
 
 
-// returns list of weather locations (cached when loaded from csv webservice)
-- (NSArray *)weatherDataLocations; {
+#pragma mark Singleton pattern
 
-
-
-    return nil;
++ (instancetype)sharedInstance {
+    static WeatherDataController *sharedService = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedService = [[self alloc] init];
+    });
+    return sharedService;
 }
 
 
-- (void)refreshLocalDataWithForce:(BOOL)forceRefresh {
+- (id)init {
+    if (self = [super init]) {
+        // init properties with defaults here...
+        self.currentWeatherData = nil;
+    }
+    return self;
+}
 
-    // refresh?
+
+- (BOOL)hasData {
+    return self.currentWeatherData;
+}
+
+
+// returns list of weather locations (cached when loaded from csv webservice)
+- (NSArray *)weatherDataLocations; {
+
+    return @[@"Edmonton"];
+
+}
+
+
+- (void)refreshLocalDataWithForce:(BOOL)forceRefresh callback:(void(^)())callback; {
+
+    // refresh? check for timestamp on cached information first
 
 
     // retrieve data...
+    self.currentWeatherData = nil; // reset
+
     NSString *weatherUrl = @"http://dd.weather.gc.ca/citypage_weather/xml/AB/s0000045_e.xml";
 
     NSURLSession *session = [NSURLSession sharedSession];
@@ -48,18 +74,18 @@
                 if (error)
                 {
                     NSLog(@"%@", error);
+                    callback();
                     return;
                 }
 
                 // parse XML data...
-//                NSString *xmlData = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                [self parseXmlWeatherData:data];
+                [self parseXmlWeatherData:data callback:callback];
 
             }] resume];
 }
 
 
-- (void)parseXmlWeatherData:(NSData *)xmlData; {
+- (void)parseXmlWeatherData:(NSData *)xmlData callback:(void(^)())callback {
 
     // trying to convert xml to json
     NSDictionary *data = [NSDictionary dictionaryWithXMLData:xmlData];
@@ -156,8 +182,10 @@
         wd.forecast.forecasts = forecasts;
     }
 
-    NSLog(@"%@", wd);
+    self.currentWeatherData = wd;
 
+    NSLog(@"%@", wd);
+    callback();
 }
 
 
