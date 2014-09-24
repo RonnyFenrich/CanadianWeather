@@ -7,6 +7,7 @@
 //
 
 #import "WeatherData.h"
+#import "WeatherDataForecastCondition.h"
 
 @implementation WeatherData
 

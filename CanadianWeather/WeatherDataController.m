@@ -8,6 +8,7 @@
 
 #import "WeatherDataController.h"
 #import "XMLDictionary.h"
+#import "WeatherDataForecastCondition.h"
 
 
 #define URL_BASEDATA    @"http://dd.weather.gc.ca/citypage_weather/xml/"
@@ -44,7 +45,7 @@
 
 
 - (BOOL)hasData {
-    return self.currentWeatherData;
+    return self.currentWeatherData!=nil;
 }
 
 

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "WeatherDataPoint.h"
 
 @interface WeatherDataCurrentCondition : NSObject
 

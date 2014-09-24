@@ -12,26 +12,88 @@
 		E3048B861961CC6B00D764C6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3048B851961CC6B00D764C6 /* ViewController.m */; };
 		E3048B891961CC6B00D764C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3048B871961CC6B00D764C6 /* Main.storyboard */; };
 		E3048B8B1961CC6B00D764C6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3048B8A1961CC6B00D764C6 /* Images.xcassets */; };
-		E3048B971961CC6B00D764C6 /* CanadianWeatherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E3048B961961CC6B00D764C6 /* CanadianWeatherTests.m */; };
-		E3048BA21961D1E800D764C6 /* WeatherDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3048BA11961D1E800D764C6 /* WeatherDataController.m */; };
-		E3048BC81961EE4500D764C6 /* XMLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = E3048BBD1961EE4500D764C6 /* XMLDictionary.m */; };
-		E3048BCF1961EF5000D764C6 /* WeatherData.m in Sources */ = {isa = PBXBuildFile; fileRef = E3048BCE1961EF5000D764C6 /* WeatherData.m */; };
-		E3048BD21962096700D764C6 /* WeatherDataCurrentCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = E3048BD11962096700D764C6 /* WeatherDataCurrentCondition.m */; };
-		E3048BD51962097900D764C6 /* WeatherDataForecastCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = E3048BD41962097900D764C6 /* WeatherDataForecastCondition.m */; };
-		E3048BD819620C6200D764C6 /* WeatherDataPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = E3048BD719620C6200D764C6 /* WeatherDataPoint.m */; };
-		E3AACC7E196F301E00E0A485 /* WeatherDataForecastConditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E3AACC7D196F301E00E0A485 /* WeatherDataForecastConditions.m */; };
 		E3B7CB2F19CD370F00F9F48B /* ShowSimpleWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7CB2E19CD370F00F9F48B /* ShowSimpleWeatherViewController.m */; };
+		E3B7CB3719CD423100F9F48B /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B7CB3619CD423100F9F48B /* NotificationCenter.framework */; };
+		E3B7CB3D19CD423200F9F48B /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7CB3C19CD423100F9F48B /* TodayViewController.m */; };
+		E3B7CB3F19CD423200F9F48B /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3B7CB3E19CD423200F9F48B /* MainInterface.storyboard */; };
+		E3B7CB4219CD423200F9F48B /* CanadianWeatherTodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E3B7CB3419CD423100F9F48B /* CanadianWeatherTodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E3E6108319D21B0400065172 /* CanadianWeatherCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = E3E6108219D21B0400065172 /* CanadianWeatherCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E3E6109219D21B0400065172 /* CanadianWeatherCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3E6107E19D21B0400065172 /* CanadianWeatherCommon.framework */; };
+		E3E6109319D21B0400065172 /* CanadianWeatherCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E3E6107E19D21B0400065172 /* CanadianWeatherCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E3E610A119D21CFA00065172 /* WeatherData.m in Sources */ = {isa = PBXBuildFile; fileRef = E3048BCE1961EF5000D764C6 /* WeatherData.m */; };
+		E3E610A319D21CFA00065172 /* WeatherDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3048BA11961D1E800D764C6 /* WeatherDataController.m */; };
+		E3E610A519D21CFA00065172 /* WeatherDataCurrentCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = E3048BD11962096700D764C6 /* WeatherDataCurrentCondition.m */; };
+		E3E610A719D21CFA00065172 /* WeatherDataForecastCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = E3048BD41962097900D764C6 /* WeatherDataForecastCondition.m */; };
+		E3E610A919D21CFA00065172 /* WeatherDataForecastConditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E3AACC7D196F301E00E0A485 /* WeatherDataForecastConditions.m */; };
+		E3E610AB19D21CFA00065172 /* WeatherDataPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = E3048BD719620C6200D764C6 /* WeatherDataPoint.m */; };
+		E3E610AC19D21D0B00065172 /* WeatherData.h in Headers */ = {isa = PBXBuildFile; fileRef = E3048BCD1961EF5000D764C6 /* WeatherData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E3E610AD19D21D0B00065172 /* WeatherDataController.h in Headers */ = {isa = PBXBuildFile; fileRef = E3048BA01961D1E800D764C6 /* WeatherDataController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E3E610AE19D21D0B00065172 /* WeatherDataCurrentCondition.h in Headers */ = {isa = PBXBuildFile; fileRef = E3048BD01962096700D764C6 /* WeatherDataCurrentCondition.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E3E610AF19D21D0B00065172 /* WeatherDataForecastCondition.h in Headers */ = {isa = PBXBuildFile; fileRef = E3048BD31962097900D764C6 /* WeatherDataForecastCondition.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E3E610B019D21D0B00065172 /* WeatherDataForecastConditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E3AACC7C196F301E00E0A485 /* WeatherDataForecastConditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E3E610B119D21D0B00065172 /* WeatherDataPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = E3048BD619620C6200D764C6 /* WeatherDataPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E3E610B219D2774600065172 /* CanadianWeatherCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3E6107E19D21B0400065172 /* CanadianWeatherCommon.framework */; };
+		E3E610B319D27CBA00065172 /* XMLDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = E3048BBC1961EE4500D764C6 /* XMLDictionary.h */; };
+		E3E610B419D27CC000065172 /* XMLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = E3048BBD1961EE4500D764C6 /* XMLDictionary.m */; };
+		E3E610B719D27F0700065172 /* Sun.png in Resources */ = {isa = PBXBuildFile; fileRef = E3E610B619D27F0700065172 /* Sun.png */; };
+		E3E610B819D27F0700065172 /* Sun.png in Resources */ = {isa = PBXBuildFile; fileRef = E3E610B619D27F0700065172 /* Sun.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E3048B911961CC6B00D764C6 /* PBXContainerItemProxy */ = {
+		E3B7CB4019CD423200F9F48B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E3048B721961CC6B00D764C6 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E3048B791961CC6B00D764C6;
-			remoteInfo = CanadianWeather;
+			remoteGlobalIDString = E3B7CB3319CD423100F9F48B;
+			remoteInfo = CanadianWeatherTodayExtension;
+		};
+		E3B7CB4319CD423200F9F48B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E3048B721961CC6B00D764C6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E3B7CB3319CD423100F9F48B;
+			remoteInfo = CanadianWeatherTodayExtension;
+		};
+		E3E6109019D21B0400065172 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E3048B721961CC6B00D764C6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E3E6107D19D21B0400065172;
+			remoteInfo = CanadianWeatherCommon;
+		};
+		E3E6109419D21B0500065172 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E3048B721961CC6B00D764C6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E3E6107D19D21B0400065172;
+			remoteInfo = CanadianWeatherCommon;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E3B7CB4819CD423200F9F48B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E3B7CB4219CD423200F9F48B /* CanadianWeatherTodayExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3E6109919D21B0500065172 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E3E6109319D21B0400065172 /* CanadianWeatherCommon.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E3048B7A1961CC6B00D764C6 /* CanadianWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CanadianWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,9 +105,6 @@
 		E3048B851961CC6B00D764C6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E3048B881961CC6B00D764C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E3048B8A1961CC6B00D764C6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		E3048B901961CC6B00D764C6 /* CanadianWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CanadianWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E3048B951961CC6B00D764C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E3048B961961CC6B00D764C6 /* CanadianWeatherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CanadianWeatherTests.m; sourceTree = "<group>"; };
 		E3048BA01961D1E800D764C6 /* WeatherDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherDataController.h; sourceTree = "<group>"; };
 		E3048BA11961D1E800D764C6 /* WeatherDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDataController.m; sourceTree = "<group>"; };
 		E3048BA51961D40600D764C6 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -63,6 +122,16 @@
 		E3AACC7D196F301E00E0A485 /* WeatherDataForecastConditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDataForecastConditions.m; sourceTree = "<group>"; };
 		E3B7CB2D19CD370F00F9F48B /* ShowSimpleWeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowSimpleWeatherViewController.h; sourceTree = "<group>"; };
 		E3B7CB2E19CD370F00F9F48B /* ShowSimpleWeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowSimpleWeatherViewController.m; sourceTree = "<group>"; };
+		E3B7CB3419CD423100F9F48B /* CanadianWeatherTodayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CanadianWeatherTodayExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3B7CB3619CD423100F9F48B /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		E3B7CB3A19CD423100F9F48B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3B7CB3B19CD423100F9F48B /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
+		E3B7CB3C19CD423100F9F48B /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
+		E3B7CB3E19CD423200F9F48B /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		E3E6107E19D21B0400065172 /* CanadianWeatherCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CanadianWeatherCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3E6108119D21B0400065172 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3E6108219D21B0400065172 /* CanadianWeatherCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CanadianWeatherCommon.h; sourceTree = "<group>"; };
+		E3E610B619D27F0700065172 /* Sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Sun.png; path = Ressources/Sun.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,10 +139,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3E6109219D21B0400065172 /* CanadianWeatherCommon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E3048B8D1961CC6B00D764C6 /* Frameworks */ = {
+		E3B7CB3119CD423100F9F48B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3E610B219D2774600065172 /* CanadianWeatherCommon.framework in Frameworks */,
+				E3B7CB3719CD423100F9F48B /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3E6107A19D21B0400065172 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -87,7 +166,9 @@
 			isa = PBXGroup;
 			children = (
 				E3048B7C1961CC6B00D764C6 /* CanadianWeather */,
-				E3048B931961CC6B00D764C6 /* CanadianWeatherTests */,
+				E3B7CB3819CD423100F9F48B /* CanadianWeatherTodayExtension */,
+				E3E6107F19D21B0400065172 /* CanadianWeatherCommon */,
+				E3B7CB3519CD423100F9F48B /* Frameworks */,
 				E3048B7B1961CC6B00D764C6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,7 +177,8 @@
 			isa = PBXGroup;
 			children = (
 				E3048B7A1961CC6B00D764C6 /* CanadianWeather.app */,
-				E3048B901961CC6B00D764C6 /* CanadianWeatherTests.xctest */,
+				E3B7CB3419CD423100F9F48B /* CanadianWeatherTodayExtension.appex */,
+				E3E6107E19D21B0400065172 /* CanadianWeatherCommon.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,8 +186,6 @@
 		E3048B7C1961CC6B00D764C6 /* CanadianWeather */ = {
 			isa = PBXGroup;
 			children = (
-				E3048BA61961DB8000D764C6 /* Frameworks */,
-				E3048BA41961D20200D764C6 /* Classes */,
 				E3048BA31961D1FB00D764C6 /* ViewControllers */,
 				E3048B811961CC6B00D764C6 /* AppDelegate.h */,
 				E3048B821961CC6B00D764C6 /* AppDelegate.m */,
@@ -122,23 +202,6 @@
 				E3048B7E1961CC6B00D764C6 /* Info.plist */,
 				E3048B7F1961CC6B00D764C6 /* main.m */,
 				E3048BA51961D40600D764C6 /* PrefixHeader.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		E3048B931961CC6B00D764C6 /* CanadianWeatherTests */ = {
-			isa = PBXGroup;
-			children = (
-				E3048B961961CC6B00D764C6 /* CanadianWeatherTests.m */,
-				E3048B941961CC6B00D764C6 /* Supporting Files */,
-			);
-			path = CanadianWeatherTests;
-			sourceTree = "<group>";
-		};
-		E3048B941961CC6B00D764C6 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				E3048B951961CC6B00D764C6 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -171,6 +234,7 @@
 				E3048BD719620C6200D764C6 /* WeatherDataPoint.m */,
 			);
 			name = Classes;
+			path = ../CanadianWeather;
 			sourceTree = "<group>";
 		};
 		E3048BA61961DB8000D764C6 /* Frameworks */ = {
@@ -179,6 +243,7 @@
 				E3048BBB1961EE4500D764C6 /* XMLDictionary */,
 			);
 			name = Frameworks;
+			path = ../CanadianWeather;
 			sourceTree = "<group>";
 		};
 		E3048BBB1961EE4500D764C6 /* XMLDictionary */ = {
@@ -191,7 +256,72 @@
 			path = XMLDictionary/XMLDictionary;
 			sourceTree = "<group>";
 		};
+		E3B7CB3519CD423100F9F48B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E3B7CB3619CD423100F9F48B /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E3B7CB3819CD423100F9F48B /* CanadianWeatherTodayExtension */ = {
+			isa = PBXGroup;
+			children = (
+				E3B7CB3B19CD423100F9F48B /* TodayViewController.h */,
+				E3B7CB3C19CD423100F9F48B /* TodayViewController.m */,
+				E3B7CB3E19CD423200F9F48B /* MainInterface.storyboard */,
+				E3B7CB3919CD423100F9F48B /* Supporting Files */,
+			);
+			path = CanadianWeatherTodayExtension;
+			sourceTree = "<group>";
+		};
+		E3B7CB3919CD423100F9F48B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E3E610B619D27F0700065172 /* Sun.png */,
+				E3B7CB3A19CD423100F9F48B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E3E6107F19D21B0400065172 /* CanadianWeatherCommon */ = {
+			isa = PBXGroup;
+			children = (
+				E3048BA61961DB8000D764C6 /* Frameworks */,
+				E3048BA41961D20200D764C6 /* Classes */,
+				E3E6108219D21B0400065172 /* CanadianWeatherCommon.h */,
+				E3E6108019D21B0400065172 /* Supporting Files */,
+			);
+			path = CanadianWeatherCommon;
+			sourceTree = "<group>";
+		};
+		E3E6108019D21B0400065172 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E3E6108119D21B0400065172 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		E3E6107B19D21B0400065172 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3E610B019D21D0B00065172 /* WeatherDataForecastConditions.h in Headers */,
+				E3E610B119D21D0B00065172 /* WeatherDataPoint.h in Headers */,
+				E3E6108319D21B0400065172 /* CanadianWeatherCommon.h in Headers */,
+				E3E610AD19D21D0B00065172 /* WeatherDataController.h in Headers */,
+				E3E610B319D27CBA00065172 /* XMLDictionary.h in Headers */,
+				E3E610AC19D21D0B00065172 /* WeatherData.h in Headers */,
+				E3E610AE19D21D0B00065172 /* WeatherDataCurrentCondition.h in Headers */,
+				E3E610AF19D21D0B00065172 /* WeatherDataForecastCondition.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		E3048B791961CC6B00D764C6 /* CanadianWeather */ = {
@@ -201,33 +331,56 @@
 				E3048B761961CC6B00D764C6 /* Sources */,
 				E3048B771961CC6B00D764C6 /* Frameworks */,
 				E3048B781961CC6B00D764C6 /* Resources */,
+				E3B7CB4819CD423200F9F48B /* Embed App Extensions */,
+				E3E6109919D21B0500065172 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E3B7CB4119CD423200F9F48B /* PBXTargetDependency */,
+				E3B7CB4419CD423200F9F48B /* PBXTargetDependency */,
+				E3E6109119D21B0400065172 /* PBXTargetDependency */,
+				E3E6109519D21B0500065172 /* PBXTargetDependency */,
 			);
 			name = CanadianWeather;
 			productName = CanadianWeather;
 			productReference = E3048B7A1961CC6B00D764C6 /* CanadianWeather.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E3048B8F1961CC6B00D764C6 /* CanadianWeatherTests */ = {
+		E3B7CB3319CD423100F9F48B /* CanadianWeatherTodayExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E3048B9D1961CC6B00D764C6 /* Build configuration list for PBXNativeTarget "CanadianWeatherTests" */;
+			buildConfigurationList = E3B7CB4519CD423200F9F48B /* Build configuration list for PBXNativeTarget "CanadianWeatherTodayExtension" */;
 			buildPhases = (
-				E3048B8C1961CC6B00D764C6 /* Sources */,
-				E3048B8D1961CC6B00D764C6 /* Frameworks */,
-				E3048B8E1961CC6B00D764C6 /* Resources */,
+				E3B7CB3019CD423100F9F48B /* Sources */,
+				E3B7CB3119CD423100F9F48B /* Frameworks */,
+				E3B7CB3219CD423100F9F48B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E3048B921961CC6B00D764C6 /* PBXTargetDependency */,
 			);
-			name = CanadianWeatherTests;
-			productName = CanadianWeatherTests;
-			productReference = E3048B901961CC6B00D764C6 /* CanadianWeatherTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
+			name = CanadianWeatherTodayExtension;
+			productName = CanadianWeatherTodayExtension;
+			productReference = E3B7CB3419CD423100F9F48B /* CanadianWeatherTodayExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		E3E6107D19D21B0400065172 /* CanadianWeatherCommon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3E6109619D21B0500065172 /* Build configuration list for PBXNativeTarget "CanadianWeatherCommon" */;
+			buildPhases = (
+				E3E6107919D21B0400065172 /* Sources */,
+				E3E6107A19D21B0400065172 /* Frameworks */,
+				E3E6107B19D21B0400065172 /* Headers */,
+				E3E6107C19D21B0400065172 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CanadianWeatherCommon;
+			productName = CanadianWeatherCommon;
+			productReference = E3E6107E19D21B0400065172 /* CanadianWeatherCommon.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -241,9 +394,11 @@
 					E3048B791961CC6B00D764C6 = {
 						CreatedOnToolsVersion = 6.0;
 					};
-					E3048B8F1961CC6B00D764C6 = {
-						CreatedOnToolsVersion = 6.0;
-						TestTargetID = E3048B791961CC6B00D764C6;
+					E3B7CB3319CD423100F9F48B = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+					E3E6107D19D21B0400065172 = {
+						CreatedOnToolsVersion = 6.0.1;
 					};
 				};
 			};
@@ -261,7 +416,8 @@
 			projectRoot = "";
 			targets = (
 				E3048B791961CC6B00D764C6 /* CanadianWeather */,
-				E3048B8F1961CC6B00D764C6 /* CanadianWeatherTests */,
+				E3B7CB3319CD423100F9F48B /* CanadianWeatherTodayExtension */,
+				E3E6107D19D21B0400065172 /* CanadianWeatherCommon */,
 			);
 		};
 /* End PBXProject section */
@@ -271,12 +427,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3E610B719D27F0700065172 /* Sun.png in Resources */,
 				E3048B891961CC6B00D764C6 /* Main.storyboard in Resources */,
 				E3048B8B1961CC6B00D764C6 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E3048B8E1961CC6B00D764C6 /* Resources */ = {
+		E3B7CB3219CD423100F9F48B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3E610B819D27F0700065172 /* Sun.png in Resources */,
+				E3B7CB3F19CD423200F9F48B /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3E6107C19D21B0400065172 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -290,35 +456,57 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3048BCF1961EF5000D764C6 /* WeatherData.m in Sources */,
-				E3048BD51962097900D764C6 /* WeatherDataForecastCondition.m in Sources */,
-				E3048BD819620C6200D764C6 /* WeatherDataPoint.m in Sources */,
-				E3AACC7E196F301E00E0A485 /* WeatherDataForecastConditions.m in Sources */,
-				E3048BA21961D1E800D764C6 /* WeatherDataController.m in Sources */,
 				E3048B861961CC6B00D764C6 /* ViewController.m in Sources */,
-				E3048BC81961EE4500D764C6 /* XMLDictionary.m in Sources */,
 				E3048B831961CC6B00D764C6 /* AppDelegate.m in Sources */,
-				E3048BD21962096700D764C6 /* WeatherDataCurrentCondition.m in Sources */,
 				E3048B801961CC6B00D764C6 /* main.m in Sources */,
 				E3B7CB2F19CD370F00F9F48B /* ShowSimpleWeatherViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E3048B8C1961CC6B00D764C6 /* Sources */ = {
+		E3B7CB3019CD423100F9F48B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3048B971961CC6B00D764C6 /* CanadianWeatherTests.m in Sources */,
+				E3B7CB3D19CD423200F9F48B /* TodayViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3E6107919D21B0400065172 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3E610A319D21CFA00065172 /* WeatherDataController.m in Sources */,
+				E3E610A719D21CFA00065172 /* WeatherDataForecastCondition.m in Sources */,
+				E3E610A119D21CFA00065172 /* WeatherData.m in Sources */,
+				E3E610B419D27CC000065172 /* XMLDictionary.m in Sources */,
+				E3E610A919D21CFA00065172 /* WeatherDataForecastConditions.m in Sources */,
+				E3E610A519D21CFA00065172 /* WeatherDataCurrentCondition.m in Sources */,
+				E3E610AB19D21CFA00065172 /* WeatherDataPoint.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E3048B921961CC6B00D764C6 /* PBXTargetDependency */ = {
+		E3B7CB4119CD423200F9F48B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E3048B791961CC6B00D764C6 /* CanadianWeather */;
-			targetProxy = E3048B911961CC6B00D764C6 /* PBXContainerItemProxy */;
+			target = E3B7CB3319CD423100F9F48B /* CanadianWeatherTodayExtension */;
+			targetProxy = E3B7CB4019CD423200F9F48B /* PBXContainerItemProxy */;
+		};
+		E3B7CB4419CD423200F9F48B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E3B7CB3319CD423100F9F48B /* CanadianWeatherTodayExtension */;
+			targetProxy = E3B7CB4319CD423200F9F48B /* PBXContainerItemProxy */;
+		};
+		E3E6109119D21B0400065172 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E3E6107D19D21B0400065172 /* CanadianWeatherCommon */;
+			targetProxy = E3E6109019D21B0400065172 /* PBXContainerItemProxy */;
+		};
+		E3E6109519D21B0500065172 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E3E6107D19D21B0400065172 /* CanadianWeatherCommon */;
+			targetProxy = E3E6109419D21B0500065172 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -438,39 +626,73 @@
 			};
 			name = Release;
 		};
-		E3048B9E1961CC6B00D764C6 /* Debug */ = {
+		E3B7CB4619CD423200F9F48B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CanadianWeather.app/CanadianWeather";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = CanadianWeatherTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				METAL_ENABLE_DEBUG_INFO = YES;
+				INFOPLIST_FILE = CanadianWeatherTodayExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
+				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
-		E3048B9F1961CC6B00D764C6 /* Release */ = {
+		E3B7CB4719CD423200F9F48B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CanadianWeather.app/CanadianWeather";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
+				INFOPLIST_FILE = CanadianWeatherTodayExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		E3E6109719D21B0500065172 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = CanadianWeatherTests/Info.plist;
+				INFOPLIST_FILE = CanadianWeatherCommon/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				METAL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E3E6109819D21B0500065172 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CanadianWeatherCommon/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -495,14 +717,22 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E3048B9D1961CC6B00D764C6 /* Build configuration list for PBXNativeTarget "CanadianWeatherTests" */ = {
+		E3B7CB4519CD423200F9F48B /* Build configuration list for PBXNativeTarget "CanadianWeatherTodayExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E3048B9E1961CC6B00D764C6 /* Debug */,
-				E3048B9F1961CC6B00D764C6 /* Release */,
+				E3B7CB4619CD423200F9F48B /* Debug */,
+				E3B7CB4719CD423200F9F48B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		E3E6109619D21B0500065172 /* Build configuration list for PBXNativeTarget "CanadianWeatherCommon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3E6109719D21B0500065172 /* Debug */,
+				E3E6109819D21B0500065172 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
