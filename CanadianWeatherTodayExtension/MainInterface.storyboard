@@ -14,17 +14,17 @@
                         <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="152"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="190"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Station" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="S4q-xl-hsg">
-                                <rect key="frame" x="16" y="6" width="272" height="18"/>
+                                <rect key="frame" x="17" y="6" width="271" height="18"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Updated" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Gb4-kG-Ih0">
-                                <rect key="frame" x="16" y="29" width="272" height="16"/>
+                                <rect key="frame" x="17" y="29" width="271" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -77,9 +77,13 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sun.png" translatesAutoresizingMaskIntoConstraints="NO" id="0tq-Wz-5rM">
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0tq-Wz-5rM">
                                 <rect key="frame" x="8" y="53" width="72" height="72"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="72" id="JdL-Wg-GJg"/>
+                                    <constraint firstAttribute="height" constant="72" id="z8P-8L-8PZ"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wind:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFv-y6-Y7V">
                                 <rect key="frame" x="93" y="135" width="38" height="17"/>
@@ -88,7 +92,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J50-UZ-DgP">
-                                <rect key="frame" x="266" y="130" width="22" height="22"/>
+                                <rect key="frame" x="123" y="168" width="22" height="22"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -103,17 +107,18 @@
                             <constraint firstItem="0tq-Wz-5rM" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="53" id="23u-cw-0nP"/>
                             <constraint firstItem="wGP-bW-uDb" firstAttribute="leading" secondItem="3iJ-sl-oyN" secondAttribute="leading" id="39g-hr-rse"/>
                             <constraint firstItem="CYZ-gf-qJb" firstAttribute="top" secondItem="0tq-Wz-5rM" secondAttribute="bottom" constant="3" id="3XT-k1-J1C"/>
-                            <constraint firstItem="S4q-xl-hsg" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="54d-UE-WJW"/>
+                            <constraint firstItem="S4q-xl-hsg" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" constant="1" id="54d-UE-WJW"/>
+                            <constraint firstItem="J50-UZ-DgP" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="168" id="7MJ-iy-qvg"/>
                             <constraint firstItem="Gb4-kG-Ih0" firstAttribute="trailing" secondItem="S3S-Oj-5AN" secondAttribute="trailingMargin" constant="-16" id="8tC-L0-o4c"/>
                             <constraint firstItem="S4q-xl-hsg" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="6" id="94a-7J-WH8"/>
                             <constraint firstItem="UVH-Vr-mih" firstAttribute="leading" secondItem="NAB-fD-MrT" secondAttribute="trailing" constant="6" id="950-wW-JvE"/>
                             <constraint firstItem="S4q-xl-hsg" firstAttribute="trailing" secondItem="S3S-Oj-5AN" secondAttribute="trailingMargin" constant="-16" id="Bct-jE-wVh"/>
                             <constraint firstItem="PFv-y6-Y7V" firstAttribute="leading" secondItem="lfC-KA-man" secondAttribute="leading" id="CFh-tW-ZEj"/>
                             <constraint firstItem="NAB-fD-MrT" firstAttribute="top" secondItem="Gb4-kG-Ih0" secondAttribute="bottom" constant="12" id="CPG-xC-SvB"/>
-                            <constraint firstItem="Gb4-kG-Ih0" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="ChD-ix-yNS"/>
+                            <constraint firstItem="Gb4-kG-Ih0" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" constant="1" id="ChD-ix-yNS"/>
                             <constraint firstItem="W2H-aC-Ibg" firstAttribute="leading" secondItem="lfC-KA-man" secondAttribute="leading" id="H6C-mJ-LV7"/>
-                            <constraint firstItem="J50-UZ-DgP" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="130" id="IXJ-Dk-TPd"/>
                             <constraint firstItem="Gb4-kG-Ih0" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="29" id="Iup-Pg-vbr"/>
+                            <constraint firstItem="J50-UZ-DgP" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" constant="107" id="KLc-Md-jbK"/>
                             <constraint firstItem="lfC-KA-man" firstAttribute="top" secondItem="W2H-aC-Ibg" secondAttribute="bottom" constant="9" id="Kdy-6Y-iuQ"/>
                             <constraint firstItem="nVZ-hx-mRa" firstAttribute="centerY" secondItem="W2H-aC-Ibg" secondAttribute="centerY" constant="0.5" id="Mzt-3T-nWi"/>
                             <constraint firstItem="0tq-Wz-5rM" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" constant="-8" id="N92-IJ-4ed"/>
@@ -124,7 +129,6 @@
                             <constraint firstItem="UVH-Vr-mih" firstAttribute="centerY" secondItem="NAB-fD-MrT" secondAttribute="centerY" id="a2J-aU-sSD"/>
                             <constraint firstItem="NAB-fD-MrT" firstAttribute="leading" secondItem="0tq-Wz-5rM" secondAttribute="trailing" constant="13" id="aRO-8J-GJQ"/>
                             <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="J50-UZ-DgP" secondAttribute="bottom" id="bYe-Hv-tga"/>
-                            <constraint firstItem="J50-UZ-DgP" firstAttribute="trailing" secondItem="S3S-Oj-5AN" secondAttribute="trailingMargin" constant="-16" id="bek-rs-Me9"/>
                             <constraint firstItem="W2H-aC-Ibg" firstAttribute="top" secondItem="NAB-fD-MrT" secondAttribute="bottom" constant="9" id="dU7-Pt-eZN"/>
                             <constraint firstItem="3iJ-sl-oyN" firstAttribute="centerY" secondItem="lfC-KA-man" secondAttribute="centerY" constant="0.5" id="hN9-tT-JPK"/>
                             <constraint firstItem="nVZ-hx-mRa" firstAttribute="leading" secondItem="UVH-Vr-mih" secondAttribute="leading" id="i0N-Ca-GbI"/>
@@ -137,10 +141,10 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="152"/>
+                    <size key="freeformSize" width="320" height="190"/>
                     <connections>
                         <outlet property="currentCondition" destination="UVH-Vr-mih" id="J2N-Qz-4QT"/>
-                        <outlet property="currentConditionImage" destination="0tq-Wz-5rM" id="IaK-k7-G77"/>
+                        <outlet property="currentConditionImage" destination="0tq-Wz-5rM" id="9Nu-J3-HiY"/>
                         <outlet property="currentPressure" destination="nVZ-hx-mRa" id="f0H-1y-3Xi"/>
                         <outlet property="currentTemp" destination="CYZ-gf-qJb" id="Dvj-j3-Q2k"/>
                         <outlet property="currentUpdateTime" destination="Gb4-kG-Ih0" id="9qr-kT-Vcg"/>
@@ -154,9 +158,6 @@
             <point key="canvasLocation" x="573" y="545.5"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Sun.png" width="72" height="72"/>
-    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

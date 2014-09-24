@@ -9,6 +9,7 @@
 #import "TodayViewController.h"
 #import <NotificationCenter/NotificationCenter.h>
 #import "CanadianWeatherCommon.h"
+#import "UIImageView+AFNetworking.h"
 
 
 @interface TodayViewController () <NCWidgetProviding>
@@ -16,13 +17,14 @@
 @property (strong, nonatomic) IBOutlet UILabel *station;
 @property (strong, nonatomic) IBOutlet UILabel *currentUpdateTime;
 
-@property (strong, nonatomic) IBOutlet UIImageView *currentConditionImage;
 @property (strong, nonatomic) IBOutlet UILabel *currentTemp;
 
 @property (strong, nonatomic) IBOutlet UILabel *currentCondition;
 @property (strong, nonatomic) IBOutlet UILabel *currentPressure;
 @property (strong, nonatomic) IBOutlet UILabel *currentVisibility;
 @property (strong, nonatomic) IBOutlet UILabel *currentWind;
+
+@property (strong, nonatomic) IBOutlet UIImageView *currentConditionImage;
 
 @end
 
@@ -41,7 +43,9 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+    WeatherDataController *weatherDataController = [WeatherDataController sharedInstance];
+    weatherDataController.currentWeatherData = nil;
 }
 
 - (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {
@@ -51,10 +55,14 @@
     // If there's an update, use NCUpdateResultNewData
 
     WeatherDataController *weatherDataController = [WeatherDataController sharedInstance];
-    [weatherDataController refreshLocalDataWithForce:YES callback:^{
+    [weatherDataController refreshLocalDataWithForce:NO callback:^(BOOL hasUpdatedInformation) {
 
-        [self refreshWidgetUI];
-        completionHandler(NCUpdateResultNewData);
+        if (hasUpdatedInformation) {
+            [self refreshWidgetUI];
+            completionHandler(NCUpdateResultNewData);
+        } else {
+            completionHandler(NCUpdateResultNoData);
+        }
     }];
 
 }
@@ -72,9 +80,13 @@
             self.currentTemp.text = cwd.current.temperature.description;
 
             self.currentCondition.text = cwd.current.condition;
-            self.currentPressure.text = cwd.current.pressure.description;
+            self.currentPressure.text = [NSString stringWithFormat:@"%@ (%@)", cwd.current.pressure.description, cwd.current.pressureTendency];
             self.currentVisibility.text = cwd.current.visibility.description;
-            self.currentWind.text = cwd.current.windSpeed.description;
+            self.currentWind.text = [NSString stringWithFormat:@"%@ %@", cwd.current.windDirection, cwd.current.windSpeed.description];
+
+            NSString *iconUrl = [NSString stringWithFormat:@"http://weather.gc.ca/weathericons/%@.%@", cwd.current.iconCode, cwd.current.iconFormat];
+            [self.currentConditionImage setImageWithURL:[NSURL URLWithString:iconUrl]];
+            
         });
 
     } else {

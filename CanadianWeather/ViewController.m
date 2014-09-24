@@ -31,7 +31,7 @@
     self.getWeatherButton.hidden = YES;
     // get latest weather data, cache and forward to display view controller
     WeatherDataController *weatherDataController = [WeatherDataController sharedInstance];
-    [weatherDataController refreshLocalDataWithForce:YES callback:^{
+    [weatherDataController refreshLocalDataWithForce:YES callback:^(BOOL hasUpdatedInformation) {
 
         dispatch_async(dispatch_get_main_queue(), ^{
 

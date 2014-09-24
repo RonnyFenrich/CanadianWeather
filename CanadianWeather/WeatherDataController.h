@@ -18,6 +18,6 @@
 @property (strong, nonatomic) WeatherData *currentWeatherData;
 
 - (NSArray *)weatherDataLocations;                          // of WeatherLocation
-- (void)refreshLocalDataWithForce:(BOOL)forceRefresh callback:(void(^)())callback;       // retrieve updated results if expired or forced
+- (void)refreshLocalDataWithForce:(BOOL)forceRefresh callback:(void(^)(BOOL hasUpdatedInformation))callback;    // retrieve updated results if expired or forced
 
 @end

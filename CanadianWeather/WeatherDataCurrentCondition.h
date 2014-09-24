@@ -21,8 +21,10 @@
 @property (strong, nonatomic) WeatherDataPoint *temperature;
 @property (strong, nonatomic) WeatherDataPoint *dewpoint;
 @property (strong, nonatomic) WeatherDataPoint *pressure;
+@property (strong, nonatomic) NSString *pressureTendency;
 @property (strong, nonatomic) WeatherDataPoint *visibility;
 @property (strong, nonatomic) WeatherDataPoint *relativeHumidity;
 @property (strong, nonatomic) WeatherDataPoint *windSpeed;
+@property (strong, nonatomic) NSString *windDirection;
 
 @end

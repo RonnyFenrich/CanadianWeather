@@ -57,10 +57,17 @@
 }
 
 
-- (void)refreshLocalDataWithForce:(BOOL)forceRefresh callback:(void(^)())callback; {
+- (void)refreshLocalDataWithForce:(BOOL)forceRefresh callback:(void(^)(BOOL hasUpdatedInformation))callback; {
 
     // refresh? check for timestamp on cached information first
-
+    if (!forceRefresh && self.currentWeatherData && self.currentWeatherData.updateTime) {
+        NSTimeInterval timeSinceLastUpdate = [[NSDate date] timeIntervalSinceDate:self.currentWeatherData.updateTime];
+        if (timeSinceLastUpdate < (15 * 60)) {
+            // less than 15min, just return with "No new data"
+            callback(NO);
+            return;
+        }
+    }
 
     // retrieve data...
     self.currentWeatherData = nil; // reset
@@ -75,7 +82,7 @@
                 if (error)
                 {
                     NSLog(@"%@", error);
-                    callback();
+                    callback(NO);
                     return;
                 }
 
@@ -86,12 +93,13 @@
 }
 
 
-- (void)parseXmlWeatherData:(NSData *)xmlData callback:(void(^)())callback {
+- (void)parseXmlWeatherData:(NSData *)xmlData callback:(void(^)(BOOL hasUpdatedInformation))callback {
 
     // trying to convert xml to json
     NSDictionary *data = [NSDictionary dictionaryWithXMLData:xmlData];
 
     if (!data) {
+        callback(NO);
         return;
     }
 
@@ -115,12 +123,14 @@
     wd.current.dewpoint = [self getDataPointFromDictionary:dewpointData];
     NSDictionary *pressureData = [data valueForKeyPath:@"currentConditions.pressure"];
     wd.current.pressure = [self getDataPointFromDictionary:pressureData];
+    wd.current.pressureTendency = [pressureData valueForKey:@"_tendency"];
     NSDictionary *visibilityData = [data valueForKeyPath:@"currentConditions.visibility"];
     wd.current.visibility = [self getDataPointFromDictionary:visibilityData];
     NSDictionary *relativeHumidityData = [data valueForKeyPath:@"currentConditions.relativeHumidity"];
     wd.current.relativeHumidity = [self getDataPointFromDictionary:relativeHumidityData];
     NSDictionary *windSpeedData = [data valueForKeyPath:@"currentConditions.wind.speed"];
     wd.current.windSpeed = [self getDataPointFromDictionary:windSpeedData];
+    wd.current.windDirection = [data valueForKeyPath:@"currentConditions.wind.direction"];
 
     // forcast
     wd.forecast = [[WeatherDataForecastConditions alloc] init];
@@ -184,9 +194,7 @@
     }
 
     self.currentWeatherData = wd;
-
-    NSLog(@"%@", wd);
-    callback();
+    callback(YES);
 }
 
 
