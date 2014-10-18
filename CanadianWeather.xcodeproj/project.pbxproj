@@ -12,6 +12,8 @@
 		E3048B861961CC6B00D764C6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3048B851961CC6B00D764C6 /* ViewController.m */; };
 		E3048B891961CC6B00D764C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3048B871961CC6B00D764C6 /* Main.storyboard */; };
 		E3048B8B1961CC6B00D764C6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3048B8A1961CC6B00D764C6 /* Images.xcassets */; };
+		E321ED5C19EE28A600C5B3A2 /* SVG in Resources */ = {isa = PBXBuildFile; fileRef = E321ED5B19EE28A600C5B3A2 /* SVG */; };
+		E321ED5D19EE28A600C5B3A2 /* SVG in Resources */ = {isa = PBXBuildFile; fileRef = E321ED5B19EE28A600C5B3A2 /* SVG */; };
 		E3B7CB2F19CD370F00F9F48B /* ShowSimpleWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7CB2E19CD370F00F9F48B /* ShowSimpleWeatherViewController.m */; };
 		E3B7CB3719CD423100F9F48B /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B7CB3619CD423100F9F48B /* NotificationCenter.framework */; };
 		E3B7CB3D19CD423200F9F48B /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7CB3C19CD423100F9F48B /* TodayViewController.m */; };
@@ -130,6 +132,7 @@
 		E3048BD41962097900D764C6 /* WeatherDataForecastCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDataForecastCondition.m; sourceTree = "<group>"; };
 		E3048BD619620C6200D764C6 /* WeatherDataPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherDataPoint.h; sourceTree = "<group>"; };
 		E3048BD719620C6200D764C6 /* WeatherDataPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDataPoint.m; sourceTree = "<group>"; };
+		E321ED5B19EE28A600C5B3A2 /* SVG */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SVG; path = "../../PocketHomes/Pocket Homes/Resources/SVG"; sourceTree = "<group>"; };
 		E3AACC7C196F301E00E0A485 /* WeatherDataForecastConditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherDataForecastConditions.h; sourceTree = "<group>"; };
 		E3AACC7D196F301E00E0A485 /* WeatherDataForecastConditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDataForecastConditions.m; sourceTree = "<group>"; };
 		E3B7CB2D19CD370F00F9F48B /* ShowSimpleWeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowSimpleWeatherViewController.h; sourceTree = "<group>"; };
@@ -320,6 +323,7 @@
 		E3B7CB3919CD423100F9F48B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E321ED5B19EE28A600C5B3A2 /* SVG */,
 				E3B7CB3A19CD423100F9F48B /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -511,6 +515,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E321ED5C19EE28A600C5B3A2 /* SVG in Resources */,
 				E3048B891961CC6B00D764C6 /* Main.storyboard in Resources */,
 				E3048B8B1961CC6B00D764C6 /* Images.xcassets in Resources */,
 			);
@@ -521,6 +526,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3B7CB3F19CD423200F9F48B /* MainInterface.storyboard in Resources */,
+				E321ED5D19EE28A600C5B3A2 /* SVG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -833,6 +839,7 @@
 				E3E6109819D21B0500065172 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

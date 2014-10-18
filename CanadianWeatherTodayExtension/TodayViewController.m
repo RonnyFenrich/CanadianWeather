@@ -25,8 +25,10 @@
 @property (strong, nonatomic) IBOutlet UILabel *currentWind;
 
 @property (strong, nonatomic) IBOutlet UIImageView *currentConditionImage;
+@property (strong, nonatomic) IBOutlet UIWebView *currentConditionDisplay;
 
 @end
+
 
 @implementation TodayViewController
 
@@ -34,18 +36,20 @@
     [super viewDidLoad];
 }
 
+
 - (void)viewWillAppear:(BOOL)animated {
 
     [super viewWillAppear:animated];
 
-    [self refreshWidgetUI];
+//    [self refreshWidgetUI];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 
-    WeatherDataController *weatherDataController = [WeatherDataController sharedInstance];
-    weatherDataController.currentWeatherData = nil;
+//    WeatherDataController *weatherDataController = [WeatherDataController sharedInstance];
+//    weatherDataController.currentWeatherData = nil;
 }
 
 - (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {
@@ -84,24 +88,43 @@
             self.currentVisibility.text = cwd.current.visibility.description;
             self.currentWind.text = [NSString stringWithFormat:@"%@ %@", cwd.current.windDirection, cwd.current.windSpeed.description];
 
-            NSString *iconUrl = [NSString stringWithFormat:@"http://weather.gc.ca/weathericons/%@.%@", cwd.current.iconCode, cwd.current.iconFormat];
-            [self.currentConditionImage setImageWithURL:[NSURL URLWithString:iconUrl]];
-            
+//            NSString *iconUrl = [NSString stringWithFormat:@"http://weather.gc.ca/weathericons/%@.%@", cwd.current.iconCode, cwd.current.iconFormat];
+//            [self.currentConditionImage setImageWithURL:[NSURL URLWithString:iconUrl]];
+
+//            NSString *path = [[NSBundle mainBundle] pathForResource:@"Cloud-Download" ofType:@"svg"];
+            NSString *path = [[[NSBundle mainBundle] resourcePath] stringByAppendingString:@"/SVG/Cloud-Download.svg"];
+            NSURL *fileURL = [[NSURL alloc] initFileURLWithPath:path];
+            NSURLRequest *req = [NSURLRequest requestWithURL:fileURL];
+            [self.currentConditionDisplay setScalesPageToFit:YES];
+            [self.currentConditionDisplay loadRequest:req];
+
         });
 
     } else {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.station.text = @"";
-            self.currentUpdateTime.text = @"";
-
-            self.currentTemp.text = @"";
-
-            self.currentCondition.text = @"";
-            self.currentPressure.text = @"";
-            self.currentVisibility.text = @"";
-            self.currentWind.text = @"";
-        });
-
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            self.station.text = @"";
+//            self.currentUpdateTime.text = @"";
+//
+//            self.currentTemp.text = @"";
+//
+//            self.currentCondition.text = @"";
+//            self.currentPressure.text = @"";
+//            self.currentVisibility.text = @"";
+//            self.currentWind.text = @"";
+//
+//
+//            for (int i=1; i<=7; i++) {
+//                int startIndex = 10 * i;
+//                UILabel *dayLabel = (UILabel *)[self.view viewWithTag:startIndex];
+////                UIImageView *dayIcon = (UIImageView *)[self.view viewWithTag:startIndex+1];
+////                UILabel *dayPop = (UILabel *)[self.view viewWithTag:startIndex+2];
+////                UILabel *dayTmpHigh = (UILabel *)[self.view viewWithTag:startIndex+3];
+////                UILabel *dayTmpLow = (UILabel *)[self.view viewWithTag:startIndex+4];
+//
+//                dayLabel.text = [NSString stringWithFormat:@"Day%d", i];
+//            }
+//
+//        });
     }
 
 }
